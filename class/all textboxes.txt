@@ -1,0 +1,23 @@
+supname
+supadd
+suppciy
+supcntry
+suppconper
+suppphnum
+suppemail
+suppmobnum
+supnotes
+
+Stcat
+
+Uoid
+Uodes
+
+stock category list box
+supplier number list box
+stock name
+uomdes list box
+purprice
+sepr
+
+

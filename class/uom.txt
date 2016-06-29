@@ -1,0 +1,29 @@
+		public String stockAcc_unitofmes1(String unomid,String Uomdes1) throws IOException
+			{
+				expval="Add succeeded";
+               WebElement stock_we=driver.findElement(By.xpath(pr.getProperty("stockitems")));
+				
+				Actions ac=new Actions(driver);
+				ac.moveToElement(stock_we).build().perform();
+				
+				driver.findElement(By.xpath(pr.getProperty("uom"))).click();
+				driver.findElement(By.xpath(pr.getProperty("uomadd"))).click();
+				driver.findElement(By.id(pr.getProperty("uomid"))).sendKeys(unomid);
+				driver.findElement(By.id(pr.getProperty("uomdescription"))).sendKeys(Uomdes1);
+				driver.findElement(By.id(pr.getProperty("uomad"))).click();
+				Sleeper.sleepTightInSeconds(5);
+				driver.findElement(By.xpath(pr.getProperty("uomok"))).click();
+				Sleeper.sleepTightInSeconds(5);
+				actval=driver.findElement(By.xpath(pr.getProperty("scuomsc"))).getText();
+	            System.out.println(actval);
+	            driver.findElement(By.xpath(pr.getProperty("uomsucc"))).click();
+	            
+				if (expval.equalsIgnoreCase(actval))
+				{
+					return "Pass";
+				}
+				else
+				{
+					return "Fail";
+				}
+			}

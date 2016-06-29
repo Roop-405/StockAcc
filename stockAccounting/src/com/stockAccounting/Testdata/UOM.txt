@@ -1,0 +1,6 @@
+Uid&Desc
+U001&15 itmes
+U002&200 kgs
+U003&500 kgs
+U004&1 tons
+U005&10 tons

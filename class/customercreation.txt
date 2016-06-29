@@ -1,0 +1,58 @@
+public String stockAcc_custcreation(String cname ,String caddr ,String ccity,String ccntry,String cconp ,String cphnum ,String cemail ,String cmob,String cnot ) throws IOException
+			{
+				 expval="Add succeeded";
+				 System.out.println(expval);
+				 WebElement stock_we=driver.findElement(By.xpath(pr.getProperty("customers")));
+					
+					Actions ac=new Actions(driver);
+					ac.moveToElement(stock_we).build().perform();
+					driver.findElement(By.xpath(pr.getProperty("customers"))).click();
+					
+				 driver.findElement(By.xpath(pr.getProperty("cusadd"))).click();
+				 
+				 driver.findElement(By.id(pr.getProperty("cusnam"))).sendKeys(cname);
+				 driver.findElement(By.id(pr.getProperty("cusads"))).sendKeys(caddr);
+				 driver.findElement(By.id(pr.getProperty("cuscy"))).sendKeys(ccity);
+				 driver.findElement(By.id(pr.getProperty("cuscry"))).sendKeys(ccntry);
+				 driver.findElement(By.id(pr.getProperty("cuscon"))).sendKeys(cconp);
+				 driver.findElement(By.id(pr.getProperty("cusph"))).sendKeys(cphnum);
+				 driver.findElement(By.id(pr.getProperty("cusemail"))).sendKeys(cemail);
+				 driver.findElement(By.id(pr.getProperty("cusmob"))).sendKeys(cmob);
+			     driver.findElement(By.id(pr.getProperty("cusnot"))).sendKeys(cnot);
+			    
+			     driver.findElement(By.id(pr.getProperty("cusad"))).click();
+			     Sleeper.sleepTightInSeconds(5);
+			    // driver.findElement(By.xpath(pr.getProperty("cusok"))).click();
+			     List<WebElement> button=driver.findElements(By.tagName("button"));
+		    		System.out.println(button.size());
+		            for (int i = 0; i < button.size(); i++) 
+		    		{
+		    			String text=button.get(i).getText();
+		    			
+		    			if (text.equalsIgnoreCase("OK!"))
+		    			{
+		    				button.get(i).click();
+		    				break;
+		    			}
+		    		}
+			     
+			     Sleeper.sleepTightInSeconds(5);
+			     actval=driver.findElement(By.xpath(pr.getProperty("cusaddd"))).getText();
+			     System.out.println(actval);
+			     Sleeper.sleepTightInSeconds(5);
+			     driver.findElement(By.xpath(pr.getProperty("cusokk"))).click();
+			     if (expval.equalsIgnoreCase(actval))
+					{
+						return "Pass";
+					}
+					else
+					{
+						return "Fail";
+					}
+			
+			
+			
+			
+			
+			}			
+						   

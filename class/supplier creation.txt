@@ -1,0 +1,38 @@
+		public String stockAcc_suppcreation(String suppadd,String supcity,String supcount,String supconper,String suphnum,String suppemail,String suppmob,String suppnotes) throws IOException
+			{
+				 expval="Add succeeded";
+				 System.out.println(expval);
+				 driver.findElement(By.xpath(pr.getProperty("supplier"))).click();
+				 driver.findElement(By.xpath(pr.getProperty("supplieradd"))).click();
+				 driver.findElement(By.id(pr.getProperty("suppname"))).sendKeys(supname);
+				 driver.findElement(By.id(pr.getProperty("supadd"))).sendKeys(suppadd);
+				 driver.findElement(By.id(pr.getProperty("suppcity"))).sendKeys(supcity);
+				 driver.findElement(By.id(pr.getProperty("suppcount"))).sendKeys(supcount);
+				 driver.findElement(By.id(pr.getProperty("suppconper"))).sendKeys(supconper);
+				 driver.findElement(By.id(pr.getProperty("supphnum"))).sendKeys(suphnum);
+				 driver.findElement(By.id(pr.getProperty("supemail"))).sendKeys(suppemail);
+				 driver.findElement(By.id(pr.getProperty("supmob"))).sendKeys(suppmob);
+			     driver.findElement(By.id(pr.getProperty("supnotes"))).sendKeys(suppnotes);
+			    
+			     driver.findElement(By.xpath(pr.getProperty("addbtn"))).click();
+			     Sleeper.sleepTightInSeconds(5);
+			     driver.findElement(By.xpath(pr.getProperty("suppok"))).click();
+			     Sleeper.sleepTightInSeconds(5);
+			     actval=driver.findElement(By.xpath(pr.getProperty("sadds"))).getText();
+			     System.out.println(actval);
+			     Sleeper.sleepTightInSeconds(5);
+			     driver.findElement(By.xpath(pr.getProperty("suppsucc"))).click();
+			     if (expval.equalsIgnoreCase(actval))
+					{
+						return "Pass";
+					}
+					else
+					{
+						return "Fail";
+					}
+			
+			
+			
+			
+			
+			}

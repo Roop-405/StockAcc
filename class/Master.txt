@@ -1,0 +1,50 @@
+public class stockMaster
+{
+	public static String url="http://webapp.qedgetech.com";
+	public static WebDriver driver;
+	public static String expval,actval;
+	public String stockAcc_Launch(String url)
+	{
+		expval="login";
+		driver=new FirefoxDriver();
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		
+		actval=driver.findElement(By.id("btnsubmit")).getText();
+		if (expval.equalsIgnoreCase(actval))
+		{
+			return "Pass";
+			
+		}
+		else
+		{
+			return "Fail";
+		}
+		
+		
+	}
+	
+	public String stockAcc_Login(String user,String pwd)
+	{
+		expval="administrator";
+		driver.findElement(By.id("username")).clear();
+		driver.findElement(By.id("username")).sendKeys(user);
+		driver.findElement(By.id("password")).clear();
+		driver.findElement(By.id("password")).sendKeys(pwd);
+		driver.findElement(By.id("btnsubmit")).click();
+		actval=driver.findElement(By.xpath(".//*[@id='msUserName']/font/strong")).getText();
+		if (expval.equalsIgnoreCase(actval))
+		{
+			return "Pass";			
+			
+		}
+		else
+		{
+			return "Fail";
+		}
+		
+	}
+	
+
+}

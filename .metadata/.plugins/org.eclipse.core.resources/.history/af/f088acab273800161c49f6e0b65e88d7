@@ -1,0 +1,51 @@
+package com.stockAccounting.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.server.browserlaunchers.Sleeper;
+import org.testng.annotations.Test;
+
+import com.stockAccounting.Master.testngstockAcc;
+
+public class testngSuppliercre extends testngstockAcc
+
+{
+	
+	@Test
+	public void Suppliercre()
+	{
+		
+		 expval="Add succeeded";
+		 System.out.println(expval);
+		 drv.findElement(By.xpath(pr.getProperty("supplier"))).click();
+		 drv.findElement(By.xpath(pr.getProperty("supplieradd"))).click();
+		 drv.findElement(By.id(pr.getProperty("suppname"))).sendKeys("teja");
+		 drv.findElement(By.id(pr.getProperty("supadd"))).sendKeys("hitechcity");
+		 drv.findElement(By.id(pr.getProperty("suppcity"))).sendKeys("hyderabad");
+		 drv.findElement(By.id(pr.getProperty("suppcount"))).sendKeys("india");
+		 drv.findElement(By.id(pr.getProperty("suppconper"))).sendKeys("teja");
+		 drv.findElement(By.id(pr.getProperty("supphnum"))).sendKeys("020589854565");
+		 drv.findElement(By.id(pr.getProperty("supemail"))).sendKeys("teja@gmail.com");
+		 drv.findElement(By.id(pr.getProperty("supmob"))).sendKeys("9032042941");
+	     drv.findElement(By.id(pr.getProperty("supnotes"))).sendKeys("supplier supplies toys");
+	    
+	     drv.findElement(By.xpath(pr.getProperty("addbtn"))).click();
+	     Sleeper.sleepTightInSeconds(5);
+	     drv.findElement(By.xpath(pr.getProperty("suppok"))).click();
+	     Sleeper.sleepTightInSeconds(5);
+	     actval=drv.findElement(By.xpath(pr.getProperty("sadds"))).getText();
+	     System.out.println(actval);
+	     Sleeper.sleepTightInSeconds(5);
+	     drv.findElement(By.xpath(pr.getProperty("suppsucc"))).click();
+	     if (expval.equalsIgnoreCase(actval))
+			{
+				return "Pass";
+			}
+			else
+			{
+				return "Fail";
+			}
+	
+		
+	}
+
+}

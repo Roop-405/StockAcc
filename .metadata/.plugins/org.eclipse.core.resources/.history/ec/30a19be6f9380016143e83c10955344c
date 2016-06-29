@@ -1,0 +1,38 @@
+package com.stockAccounting.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.server.browserlaunchers.Sleeper;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.stockAccounting.Master.testngstockAcc;
+
+public class tetstngUomcre extends testngstockAcc
+{
+ 
+	@Test
+	public void Uomcre()
+	{
+		expval="Add succeeded";
+        WebElement stock_we=drv.findElement(By.xpath(pr.getProperty("stockitems")));
+			
+			Actions ac=new Actions(drv);
+			ac.moveToElement(stock_we).build().perform();
+			
+			drv.findElement(By.xpath(pr.getProperty("uom"))).click();
+			drv.findElement(By.xpath(pr.getProperty("uomadd"))).click();
+			drv.findElement(By.id(pr.getProperty("uomid"))).sendKeys(uoid);
+			drv.findElement(By.id(pr.getProperty("uomdescription"))).sendKeys(uodes);
+			drv.findElement(By.id(pr.getProperty("uomad"))).click();
+			Sleeper.sleepTightInSeconds(5);
+			drv.findElement(By.xpath(pr.getProperty("uomok"))).click();
+			Sleeper.sleepTightInSeconds(5);
+			actval=drv.findElement(By.xpath("html/body/div[17]/div[2]/div/div[3]/div/div")).getText();
+         System.out.println(actval);
+         drv.findElement(By.xpath(pr.getProperty("uomsucc"))).click();
+         
+         Assert.assertEquals(expval, actval,"uom not created");
+	}
+}

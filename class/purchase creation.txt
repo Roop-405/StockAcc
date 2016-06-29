@@ -1,0 +1,93 @@
+			
+			public String stockAcc_purchasecre(String total,String name1,String name2,String name3)
+			{
+				 WebElement stock_we=driver.findElement(By.xpath(pr.getProperty("purchases")));
+					
+					Actions ac=new Actions(driver);
+					ac.moveToElement(stock_we).build().perform();
+					driver.findElement(By.xpath(pr.getProperty("purchases"))).click();
+					
+					driver.findElement(By.xpath(pr.getProperty("puraddd"))).click();
+					WebElement listbox = 	driver.findElement(By.id(pr.getProperty("pursuid")));
+					Select list = new Select (listbox);
+					list.selectByVisibleText(supname);
+//					
+					WebElement listbox1 = 	driver.findElement(By.id(pr.getProperty("pursuno1")));
+					Select list1 = new Select (listbox1);
+					list1.selectByVisibleText(supname);
+					WebElement listbox2 = 	driver.findElement(By.id(pr.getProperty("purstoi1")));
+					Select list2 = new Select (listbox2);
+					list2.selectByVisibleText(name1);
+					
+					driver.findElement(By.id(pr.getProperty("purqua1"))).clear();
+					driver.findElement(By.id(pr.getProperty("purqua1"))).sendKeys("10");
+					driver.findElement(By.id(pr.getProperty("purqua1"))).click();
+					driver.findElement(By.id(pr.getProperty("purtot1"))).click();
+
+					
+					WebElement listbox3 = 	driver.findElement(By.id(pr.getProperty("pursuno2")));
+					Select list3 = new Select (listbox3);
+					list3.selectByVisibleText(supname);
+					WebElement listbox4 = 	driver.findElement(By.id(pr.getProperty("purstoi2")));
+					Select list4 = new Select (listbox4);
+					list4.selectByVisibleText(name2);
+					
+					driver.findElement(By.id(pr.getProperty("purqua2"))).clear();
+					driver.findElement(By.id(pr.getProperty("purqua2"))).sendKeys("10");
+					driver.findElement(By.id(pr.getProperty("purqua2"))).click();
+					driver.findElement(By.id(pr.getProperty("purtot2"))).click();
+					
+										
+					WebElement listbox5 = 	driver.findElement(By.id(pr.getProperty("pursuno3")));
+					Select list5 = new Select (listbox5);
+					list5.selectByVisibleText(supname);
+					WebElement listbox6 = 	driver.findElement(By.id(pr.getProperty("purstoi3")));
+					Select list6 = new Select (listbox6);
+					list6.selectByVisibleText(name3);
+					
+					driver.findElement(By.id(pr.getProperty("purqua3"))).clear();
+					driver.findElement(By.id(pr.getProperty("purqua3"))).sendKeys("10");
+					driver.findElement(By.id(pr.getProperty("purqua3"))).click();
+					Sleeper.sleepTight(4000);
+					driver.findElement(By.id(pr.getProperty("purtot3"))).click();
+
+					
+			// 		
+					//driver.findElement(By.xpath(pr.getProperty("purcdel"))).click();
+					//driver.findElement(By.xpath(pr.getProperty("purcde"))).click();
+
+					driver.findElement(By.id(pr.getProperty("purpay"))).click();
+					driver.findElement(By.id(pr.getProperty("purpay"))).sendKeys(total);
+					
+					driver.findElement(By.id(pr.getProperty("purad"))).click();
+					Sleeper.sleepTightInSeconds(5);
+					
+					
+					 List<WebElement> button=driver.findElements(By.tagName("button"));
+			    		System.out.println(button.size());
+			            for (int i = 0; i < button.size(); i++) 
+			    		{
+			    			String text=button.get(i).getText();
+			    			
+			    			if (text.equalsIgnoreCase("OK!"))
+			    			{
+			    				button.get(i).click();
+			    				break;
+			    			}
+			    		}
+//					driver.findElement(By.xpath(pr.getProperty("purok"))).click();
+					Sleeper.sleepTightInSeconds(5);
+					actval=driver.findElement(By.xpath(pr.getProperty("puraddm"))).getText();
+		            System.out.println(actval);
+		            driver.findElement(By.xpath(pr.getProperty("puraddok"))).click();
+		            
+					if (expval.equalsIgnoreCase(actval))
+					{
+						return "Pass";
+					}
+					else
+					{
+						return "Fail";
+					}
+				}
+					

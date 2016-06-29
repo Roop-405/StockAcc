@@ -1,0 +1,168 @@
+//loginpage class
+------------------
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class loginpage 
+{
+	public static String url="http://webapp.qedgetech.com";
+	public static String u="admin",p="master";
+	
+	@FindBy(id="username")
+	WebElement username;
+	
+	
+	@FindBy(id="password")
+	WebElement password;
+	
+	@FindBy(id="btnsubmit")
+	WebElement login;
+	
+	@FindBy(id="btnreset")
+	WebElement reset;
+	
+	public void s_Login(String u,String p)
+	{
+//		reset.click();
+		username.clear();
+		username.sendKeys(u);
+		password.clear();
+		password.sendKeys(p);
+		login.click();
+	}
+
+}
+----------------------------------------------------
+
+//adminhomepage class
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class adminhomepage
+{
+	@FindBy(linkText="Dashboard")
+	WebElement dashboard;
+	
+	@FindBy(linkText="Stock Items")
+	WebElement stockitems;
+	
+	
+	@FindBy(linkText="Suppliers")
+	WebElement suppliers;
+	
+	@FindBy(linkText="Purchases")
+	WebElement purchases;
+	
+	@FindBy(linkText="Customers")
+	WebElement customers;
+	
+	@FindBy(linkText="Sales")
+	WebElement sales;
+	
+	@FindBy(linkText="Outstandings")
+	WebElement outstandings;
+	
+	@FindBy(linkText="Administrator")
+	WebElement administrator;
+	
+	@FindBy(linkText="Settings")
+	WebElement settings;
+	
+	@FindBy(xpath=".//*[@id='mi_logout']/a")
+	WebElement logout;
+	
+	@FindBy(xpath=".//*[@id='msUserName']/font/strong")
+	WebElement admin;
+	
+	
+	public void dashboardclick()
+	{
+		dashboard.click();
+	}
+	
+	public void stockitemsclick()
+	{
+		stockitems.click();
+	}
+	
+	public void suppliersclick()
+	{
+		suppliers.click();
+	}
+	
+	public void purchasesclick()
+	{
+		purchases.click();
+	}
+	
+	public void cutomersclick()
+	{
+		customers.click();
+	}
+	
+	public void salesclick()
+	{
+		sales.click();
+	}
+	
+	public void outstandingsclick()
+	{
+		outstandings.click();
+	}
+	public void administratorclick()
+	{
+		administrator.click();
+	}
+	
+	public void settingsclick()
+	{
+		settings.click();
+	}
+	
+	public void logoutclick()
+	{
+		logout.click();
+	}
+
+}
+
+--------------------------------------------------------------
+
+//login Test
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.server.browserlaunchers.Sleeper;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+public class logintest
+{
+	@Test
+	public void login()
+	{
+		WebDriver driver=new FirefoxDriver();
+		loginpage lp=PageFactory.initElements(driver, loginpage.class);
+		adminhomepage am=PageFactory.initElements(driver, adminhomepage.class);
+		driver.get(lp.url);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		
+		
+		lp.s_Login(lp.u, lp.p);
+		Sleeper.sleepTightInSeconds(5);
+		am.logoutclick();
+		Sleeper.sleepTightInSeconds(5);
+		driver.close();
+		
+		
+		
+	}
+
+}
+
+

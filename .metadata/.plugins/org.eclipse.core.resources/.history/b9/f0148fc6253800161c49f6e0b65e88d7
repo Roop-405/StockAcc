@@ -1,0 +1,114 @@
+package com.stockAccounting.Example;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.server.browserlaunchers.Sleeper;
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class ExampleTestng 
+{
+	
+	public static WebDriver drv;
+	public static String actval,expval;
+	
+@BeforeClass
+public void launch_driver()
+{
+	 String url="http://webapp.qedgetech.com";
+    drv = new FirefoxDriver();
+	drv.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+	drv.manage().window().maximize();
+	drv.get(url);
+	Reporter.log("Driver launched successfully");
+	
+}
+
+@BeforeMethod
+public void login()
+{
+	expval="administrator";
+	drv.findElement(By.id("username")).sendKeys("admin");
+	drv.findElement(By.id("password")).sendKeys("master");
+	drv.findElement(By.id("btnsubmit")).click();
+	
+	actval=drv.findElement(By.xpath(".//*[@id='msUserName']/font/strong")).getText();
+	if (expval.equalsIgnoreCase(actval))
+	{
+		Reporter.log("login successfully");
+		
+		
+	}
+
+}
+
+@Test
+public void supplier_creation()
+{
+
+	drv.findElement(By.id("x_Supplier_Name")).sendKeys("ramu");
+	drv.findElement(By.id("x_Address")).sendKeys("ameerpet");
+	drv.findElement(By.id("x_City")).sendKeys("hyderabad");
+	drv.findElement(By.id("x_Country")).sendKeys("india");
+	drv.findElement(By.id("x_Contact_Person")).sendKeys("ramu");
+	drv.findElement(By.id("x_Phone_Number")).sendKeys("9052408382");
+	drv.findElement(By.id("x__Email")).sendKeys("ramuikd@gmail.com");
+	drv.findElement(By.id("x_Mobile_Number")).sendKeys("9052408382");
+	drv.findElement(By.id("x_Notes")).sendKeys("supplies toys");
+	drv.findElement(By.id("btnAction")).click();
+
+     Sleeper.sleepTightInSeconds(5);
+	drv.findElement(By.xpath("html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]")).click();
+	Sleeper.sleepTightInSeconds(5);
+	actval=drv.findElement(By.xpath("html/body/div[17]/div[2]/div/div[3]/div/div")).getText();
+	System.out.println(actval);
+	Sleeper.sleepTightInSeconds(5);
+	drv.findElement(By.xpath("html/body/div[17]/div[2]/div/div[4]/div[2]/button")).click();
+	
+	if (expval.equalsIgnoreCase(actval))
+	{
+	   Reporter.log("successully created");
+	   
+	}
+
+}
+
+@AfterMethod
+public void logout()
+{
+	expval="login";
+	
+	drv.findElement(By.id("logout")).click();
+	drv.findElement(By.xpath("html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]")).click();
+	actval=drv.findElement(By.id("login")).getText();
+	if (expval.equalsIgnoreCase(actval))
+	{
+	   Reporter.log("logout successfully");
+	   
+	   
+	}
+}
+
+@AfterClass
+public void driver_close()
+{
+	drv.close();
+	
+}
+
+
+
+
+
+
+
+
+
+}

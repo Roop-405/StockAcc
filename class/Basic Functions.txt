@@ -1,0 +1,54 @@
+public class functionseg 
+{
+	public static WebDriver driver;
+	public static String scrpath="D:\\OJT\\stockAccounting\\src\\com\\stockAccounting\\screenshots";
+	public static void main(String[] args) throws IOException
+	{
+	
+//		function1();
+//		
+//		driver=new FirefoxDriver();
+//		driver.get("http://google.com");
+//		
+		functionseg f=new functionseg();
+//		f.takingscreenshot("google.bmp");
+		
+		f.excelread("D:\\OJT\\stockAccounting\\src\\com\\stockAccounting\\Testdata", "testdata.xlsx", "Sheet1");
+		
+	}
+	//static fun without returning value
+	public static void function1()
+	{
+		System.out.println("This is function1 code");
+	}
+	
+	
+	public void takingscreenshot(String name) throws IOException
+	{
+		File srcfile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(srcfile, new File(scrpath+"\\"+name));
+	}
+	
+	public void excelread(String fPath,String fName,String shtname) throws IOException
+	{
+		String xl=fPath+"\\"+fName;
+		FileInputStream fi=new FileInputStream(xl);
+		XSSFWorkbook wb=new XSSFWorkbook(fi);
+		XSSFSheet ws=wb.getSheet(shtname);
+		
+		int Rc=ws.getLastRowNum();
+		
+		for (int i = 1; i <= Rc; i++)
+		{
+			int cc=ws.getRow(i).getLastCellNum();
+			for (int j = 0; j < cc; j++)
+			{
+				System.out.println(ws.getRow(i).getCell(j).getStringCellValue());
+				
+			}
+		}
+		
+	}
+	
+	
+}

@@ -1,0 +1,28 @@
+			public String stockAcc_stockcatcreat() throws IOException
+			{
+				expval="Add succeeded";
+WebElement stock_we=driver.findElement(By.xpath(pr.getProperty("stockitems")));
+				
+				Actions ac=new Actions(driver);
+				ac.moveToElement(stock_we).build().perform();
+				
+				driver.findElement(By.xpath(pr.getProperty("stockcategories"))).click();;
+				driver.findElement(By.xpath(pr.getProperty("catadd"))).click();
+				driver.findElement(By.id(pr.getProperty("catnam"))).sendKeys(name);
+				driver.findElement(By.id(pr.getProperty("cataddb"))).click();
+				Sleeper.sleepTightInSeconds(5);
+				driver.findElement(By.xpath(pr.getProperty("catok"))).click();
+				Sleeper.sleepTightInSeconds(5);
+				actval=driver.findElement(By.xpath(pr.getProperty("scsuccsc"))).getText();
+				System.out.println(actval);
+				Sleeper.sleepTightInSeconds(5);
+				driver.findElement(By.xpath(pr.getProperty("catsucc"))).click();
+				if (expval.equalsIgnoreCase(actval))
+				{
+					return "Pass";
+				}
+				else
+				{
+					return "Fail";
+				}
+			}

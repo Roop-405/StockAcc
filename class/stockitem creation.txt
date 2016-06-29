@@ -1,0 +1,69 @@
+			}
+			public String stockAcc_stockitemcreation(String stname,String purpr,String sepr,String stnotes)
+			{
+				expval="Add succeeded";
+                WebElement stock_we=driver.findElement(By.xpath(pr.getProperty("stockitems")));
+				
+				Actions ac=new Actions(driver);
+				ac.moveToElement(stock_we).build().perform();
+				driver.findElement(By.xpath(pr.getProperty("stockitems"))).click();
+				driver.findElement(By.xpath(pr.getProperty("stoadd"))).click();
+				WebElement listbox = 	driver.findElement(By.id(pr.getProperty("stocat")));
+				Select list = new Select (listbox);
+				list.selectByVisibleText(name);
+				WebElement listbox1 = 	driver.findElement(By.id(pr.getProperty("stosuno")));
+				Select sel= new Select (listbox1);
+				sel.selectByVisibleText(supname);
+				
+				//driver.findElement(By.id(pr.getProperty("stocat"))).sendKeys("data");
+				//driver.findElement(By.id(pr.getProperty("stosuno"))).sendKeys(uomdes);
+				
+				driver.findElement(By.id(pr.getProperty("stoname"))).sendKeys(stname);
+				WebElement listbox2 = 	driver.findElement(By.id(pr.getProperty("stouom")));
+				Select sele= new Select (listbox2);
+				sele.selectByVisibleText(uomdes);
+
+//              driver.findElement(By.id(pr.getProperty("stocuadd"))).click();
+//              driver.findElement(By.id(pr.getProperty("uomid"))).sendKeys(unomid);
+//				driver.findElement(By.id(pr.getProperty("uomdescription"))).sendKeys(uomdes);
+//              driver.findElement(By.xpath("stouomadd")).click();
+
+				driver.findElement(By.id(pr.getProperty("stopur"))).sendKeys(purpr);
+	            driver.findElement(By.id(pr.getProperty("stose"))).sendKeys(sepr);
+	            driver.findElement(By.id(pr.getProperty("stonot"))).sendKeys(stnotes);
+	            driver.findElement(By.id(pr.getProperty("stocradd"))).click();
+	            Sleeper.sleepTightInSeconds(5);
+	            List<WebElement> button=driver.findElements(By.tagName("button"));
+	    		System.out.println(button.size());
+	            for (int i = 0; i < button.size(); i++) 
+	    		{
+	    			String text=button.get(i).getText();
+	    			
+	    			if (text.equalsIgnoreCase("OK!"))
+	    			{
+	    				button.get(i).click();
+	    				break;
+	    			}
+	    		}
+	
+//				driver.findElement(By.xpath(pr.getProperty("stook"))).click();
+				
+	            Sleeper.sleepTightInSeconds(5);
+				actval=driver.findElement(By.xpath(pr.getProperty("stoadm"))).getText();
+	            System.out.println(actval);
+	            driver.findElement(By.xpath(pr.getProperty("stoadok"))).click();
+			
+			
+			
+
+				if (expval.equalsIgnoreCase(actval))
+				{
+					return "Pass";
+				}
+				else
+				{
+					return "Fail";
+				}
+			
+			
+			}

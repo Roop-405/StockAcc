@@ -1,0 +1,37 @@
+package com.stockAccounting.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.server.browserlaunchers.Sleeper;
+import org.testng.annotations.Test;
+
+import com.stockAccounting.Master.testngstockAcc;
+
+public class testngStockcatcre extends testngstockAcc
+{
+
+	@Test
+	public void Stockcatcre()
+	{
+		expval="Add succeeded";
+        WebElement stock_we=drv.findElement(By.xpath(pr.getProperty("stockitems")));
+		
+		Actions ac=new Actions(drv);
+		ac.moveToElement(stock_we).build().perform();
+		
+		drv.findElement(By.xpath(pr.getProperty("stockcategories"))).click();;
+		drv.findElement(By.xpath(pr.getProperty("catadd"))).click();
+		drv.findElement(By.id(pr.getProperty("catnam"))).sendKeys("toys");
+		drv.findElement(By.id(pr.getProperty("cataddb"))).click();
+		Sleeper.sleepTightInSeconds(5);
+		drv.findElement(By.xpath(pr.getProperty("catok"))).click();
+		Sleeper.sleepTightInSeconds(5);
+		actval=drv.findElement(By.xpath(pr.getProperty("scsuccsc"))).getText();
+		System.out.println(actval);
+		Sleeper.sleepTightInSeconds(5);
+		drv.findElement(By.xpath(pr.getProperty("catsucc"))).click();
+	}
+	
+	
+}

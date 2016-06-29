@@ -1,0 +1,411 @@
+###################Properties of Stock Accounting########################
+
+#idproperty of username
+username=username
+
+#id property of password
+password=password
+
+#id property of login button
+login=btnsubmit
+
+#id property of Reset button
+reset=btnreset
+
+#xpath for the property of Administrator
+ administrator=.//*[@id='msUserName']/font/strong
+ 
+ #id property of logout
+ logout=logout
+ 
+ #xpath for logout confirmation window
+ ok=html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]
+ 
+ #xpath for the property of Suppliers
+ supplier=.//*[@id='mi_a_suppliers']/a
+ 
+ #xpath for the property of dashboard
+ dashboard=.//*[@id='mi_dashboard_php']/a
+ 
+ #xpath for addbutton in suppliers
+ supplieradd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a
+ 
+ #id for suppliername
+ suppname=x_Supplier_Name
+ 
+ #id for suppaddress
+ supadd=x_Address
+ 
+ #id for suppcity
+ suppcity=x_City
+ 
+ #id for suppcount
+ suppcount=x_Country
+ 
+ #id for suppconper
+ suppconper=x_Contact_Person
+ 
+ #id for supp ph number
+ supphnum=x_Phone_Number
+ 
+  #id for supp email
+ supemail=x__Email
+ 
+ #id for suppmob number
+ supmob=x_Mobile_Number
+ 
+ #id for supp notes
+ supnotes=x_Notes
+  
+ #xpath  for add button 
+ addbtn=.//*[@id='btnAction']
+ 
+ #xpath for the property of ok button in confirm
+ suppok=html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]
+ 
+ #xpath for the property of Add succedded msg in supplier
+ sadds=html/body/div[17]/div[2]/div/div[3]/div/div
+ 
+ #xpath for the property of ok button in Add sucedded
+ suppsucc=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+ 
+  #xpath for the property of stockcategories
+ stockcategories=.//*[@id='mi_a_stock_categories']/a
+ 
+ #xpath for the property of Stock category ADD
+ catadd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a
+ 
+ #id for the stock category name
+ catnam=x_Category_Name
+ 
+ #id for the stock category add button
+ cataddb=btnAction
+ 
+ #xpath for the stock category ok button in confirm
+ catok=html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]
+ 
+ #xpath for the property of add succeded message in stock categorie
+ scsuccsc=html/body/div[17]/div[2]/div/div[3]/div/div
+ 
+ #xpath for the property of ok button in add succedded in stock category
+ catsucc=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+  
+ #xpath for the proprty of unit of measurement
+ uom=.//*[@id='mi_a_unit_of_measurement']/a
+ 
+ #xpath for the property of add button in uom
+ uomadd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a
+  
+ #id for the uom id
+ uomid=x_UOM_ID
+  
+ #id for the uom description
+ uomdescription=x_UOM_Description
+  
+ #id for the uom add button
+ uomad=btnAction
+  
+ #xpath for the property of uom ok button in confirm
+ uomok=html/body/div[17]/div[2]/div/div[4]/div[2]/button[1]
+  
+ #xpath for the property of ok button in add succedded in uom
+ uomsucc=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+  
+ #xpath for the property of add succedded message in uom
+ scuomsc=html/body/div[17]/div[2]/div/div[3]/div/div
+  
+ #xpath for the property of stock items 
+ stockitems=.//*[@id='mi_a_stock_items']/a 
+ 
+ #xpath for the property of Add button in Stockitems
+ stoadd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a
+
+ #id for the category
+ stocat=x_Category
+ 
+ #id for the supplier number
+ stosuno=x_Supplier_Number
+ 
+ #id for the stock name
+ stoname=x_Stock_Name
+ 
+ #id for the uom
+ stouom=x_Unit_Of_Measurement
+ 
+ #id for the uomadd in stock creation
+ stocuadd=aol_x_Unit_Of_Measurement
+ 
+ #xpath for the property of add in uom in stock creation page
+ stouomadd=.//*[@id='ewAddOptDialog']/div/div/div[3]/button[1]
+ 
+ #id for the purchasing price
+ stopur=x_Purchasing_Price
+ 
+ #id for the selling price
+ stose=x_Selling_Price
+ 
+ #id for the notes
+ stonot=x_Notes
+ 
+ #id for the add button in stock creation
+ stocradd=btnAction
+ 
+ #xpath for the property of ok button in confirm
+ stook=html/body/div[19]/div[2]/div/div[4]/div[2]/button[1]
+ 
+ #xpath for the property of add succedded msg in stock creation
+ stoadm=html/body/div[17]/div[2]/div/div[3]/div/div
+ 
+ #xpath for the property of ok in add succedded
+ stoadok=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+ 
+ #xpath for the property of purchases
+ purchases=.//*[@id='mi_a_purchases']/a
+ 
+ #xpath for the property of add button in purchases
+ puradd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a
+ 
+ #xpath for the property of addpurchase/purchaser details
+ puraddd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[2]/div/a
+ 
+ #id for the purchase date
+ puradd=x_Purchase_Date
+ 
+ #id for the supplier id
+ pursuid=x_Supplier_ID
+ 
+ #id for the purchase notes
+ purno=x_Notes
+ 
+ #id for the total payment
+ purpay=x_Total_Payment
+ 
+ #xpath for the property of delete ib purchase creation
+ purcdel=.//*[@id='r1_a_purchases_detail']/td[1]/div/a.
+ 
+ #xpath for the property of ok button in delete
+ purcde=html/body/div[19]/div[2]/div/div[4]/div[2]/button[1]
+ 
+ #id for the supplier number
+ pursuno1=x1_Supplier_Number
+ 
+ #id for the supplier number
+ pursuno2=x2_Supplier_Number
+ 
+ #id for the supplier number
+ pursuno3=x3_Supplier_Number
+ 
+ #id for the stock item
+ purstoi1=x1_Stock_Item
+
+ #id for the stock item
+ purstoi2=x2_Stock_Item
+ 
+  #id for the stock item
+ purstoi3=x3_Stock_Item
+  
+ #id for the quantity
+ purqua1=x1_Purchasing_Quantity
+ 
+  #id for the quantity
+ purqua2=x2_Purchasing_Quantity
+ 
+  #id for the quantity
+ purqua3=x3_Purchasing_Quantity
+ 
+ #id for the totalpayment	
+ purtot1=x1_Purchasing_Total_Amount
+ 
+ #id for the totalpayment	
+ purtot2=x2_Purchasing_Total_Amount
+ 
+ #id for the totalpayment	
+ purtot3=x3_Purchasing_Total_Amount
+ 
+ #id for the add button in purchase creation
+ purad=btnAction
+ 
+ #xpath for the property of ok button in confirm 
+ purok=html/body/div[19]/div[2]/div/div[4]/div[2]/button[1]
+ 
+ #xpath for the property of add succedded 
+ puraddm=html/body/div[17]/div[2]/div/div[3]/div/div
+ 
+ #xpath for the property of ok button in add succedded
+ puraddok=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+ 
+ #xpath for the property of customers
+ customers=.//*[@id='mi_a_customers']/a
+ 
+ #xpath for the add button in customers
+ cusadd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a
+ 
+ #id for the customer name
+ cusnam=x_Customer_Name
+ 
+ #id for the address
+ cusads=x_Address
+ 
+ #id for the city
+ cuscy=x_City
+ 
+ #id for the country
+ cuscry=x_Country
+ 
+ #id for the contact person
+ cuscon=x_Contact_Person
+ 
+ #id for the phone number
+ cusph=x_Phone_Number
+ 
+ #id for the email
+ cusemail=x__Email
+ 
+ #id for the mobile number
+ cusmob=x_Mobile_Number
+ 
+ #id for the notes
+ cusnot=x_Notes
+ 
+ #id for the add button 
+ cusad=btnAction
+ 
+ #xpath for the property of ok button in confirm 
+ cusok=html/body/div[19]/div[2]/div/div[4]/div[2]/button[1] 
+   
+ #xpath for the property of add succedded 
+ cusaddd=html/body/div[17]/div[2]/div/div[3]/div/div
+ 
+ #xpath for the property of ok button in add succedded
+ cusokk=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+ 
+ #xpath for the property of sales
+ sales=.//*[@id='mi_a_sales']/a
+ 
+ #xpath for the add sales
+ saladd=.//*[@id='ewContentColumn']/div[3]/div[1]/div[1]/div[1]/div/a
+ 
+ #id for the customerid
+ salcus=x_Customer_ID
+ 
+ #id for the notes
+ salnot=x_Notes
+ 
+ #id for the total amount
+ saltot=x_Total_Amount
+ 
+ #id for the discountpercentage
+ saldis=x_Discount_Percentage
+ 
+ #id for the tax percentage
+ saltaxp=x_Tax_Percentage
+ 
+ #id for the tax description
+ saltaxd=x_Tax_Description
+ 
+ #id for the final total amount
+ salftot=x_Final_Total_Amount
+ 
+ #id for the total payment
+ salptot=x_Total_Payment
+ 
+ #id for the total balance
+ salbtot=x_Total_Balance
+ 
+ #id for the suppliernumber
+ salsup1=x1_Supplier_Number
+ 
+ #id for the suppliernumber
+ salsup2=x1_Supplier_Number
+ 
+ #id for the suppliernumber
+ salsup3=x1_Supplier_Number
+ 
+ #id for the suppliernumber
+ salsup4=x1_Supplier_Number 
+ 
+ #id for the suppliernumber
+ salsup5=x1_Supplier_Number
+ 
+ #xpath for the add button in sales creation page
+ salsad=.//*[@id='fa_sales_detailgrid']/div[1]/div/div/a
+ 
+ #xpath for the delete buttons in sales creation page
+ salsdel1=.//*[@id='r1_a_sales_detail']/td[1]/div/a
+ 
+ #xpath for the delete buttons in sales creation page
+ salsdel2=.//*[@id='r2_a_sales_detail']/td[1]/div/a
+ 
+ #xpath for the delete buttons in sales creation page
+ salsdel3=.//*[@id='r3_a_sales_detail']/td[1]/div/a
+ 
+ #xpath for the delete buttons in sales creation page
+ salsdel4=.//*[@id='r4_a_sales_detail']/td[1]/div/a
+ 
+ #xpath for the delete buttons in sales creation page
+ salsdel5=.//*[@id='r5_a_sales_detail']/td[1]/div/a
+ 
+ #id for the stock item in sales
+ salsto1=x1_Stock_Item
+ 
+  #id for the stock item in sales
+ salsto2=x2_Stock_Item
+ 
+  #id for the stock item in sales
+ salsto3=x3_Stock_Item
+ 
+  #id for the stock item in sales
+ salsto4=x4_Stock_Item
+ 
+  #id for the stock item in sales
+ salsto5=x5_Stock_Item
+ 
+ #id for the sales quantity
+ salqu1=x1_Sales_Quantity
+ 
+ #id for the sales quantity
+ salqu2=x2_Sales_Quantity
+ 
+ #id for the sales quantity
+ salqu3=x3_Sales_Quantity
+ 
+ #id for the sales quantity
+ salqu4=x4_Sales_Quantity
+ 
+ #id for the sales quantity
+ salqu5=x5_Sales_Quantity
+ 
+ #id for the total amount in sales table
+ saltotam1=x1_Sales_Total_Amount
+ 
+ #id for the total amount in sales table
+ saltotam2=x2_Sales_Total_Amount
+ 
+ #id for the total amount in sales table
+ saltotam3=x3_Sales_Total_Amount
+ 
+ #id for the total amount in sales table
+ saltotam4=x4_Sales_Total_Amount
+ 
+ #id for the total amount in sales table
+ saltotam5=x5_Sales_Total_Amount
+ 
+ #id for the add button in sales
+ salad=btnAction
+ 
+ #xpath for the add button
+ salok=html/body/div[19]/div[2]/div/div[4]/div[2]/button[1]
+ 
+ #xpath for the add succedded message
+ saladdd=html/body/div[17]/div[2]/div/div[3]/div/div
+ 
+ #xpath dor the ok button in add succedded tab
+ salokk=html/body/div[17]/div[2]/div/div[4]/div[2]/button
+ 
+ #for Firefox browser
+ browser=firefox
+ 
+ #for chrome 
+ browser=chrome
+ 
+ 
